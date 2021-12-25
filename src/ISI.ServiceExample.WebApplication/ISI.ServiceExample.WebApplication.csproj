@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<Deterministic>false</Deterministic>
+		<Platforms>AnyCPU;x64</Platforms>
+		<UserSecretsId>bd3924e9-6833-4213-bfb4-7e383ef4c5fb</UserSecretsId>
+		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Include="..\ISI.ServiceExample.AssemblyInfo.cs" Link="Properties\ISI.ServiceExample.AssemblyInfo.cs" />
+		<Compile Include="..\ISI.ServiceExample.Version.cs" Link="Properties\ISI.ServiceExample.Version.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="..\ISI.ServiceExample.licenseheader" Link="ISI.ServiceExample.licenseheader" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="6.0.0" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="5.0.12" />
+		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
+		<PackageReference Include="Serilog" Version="2.10.0" />
+		<PackageReference Include="Serilog.AspNetCore" Version="4.1.0" />
+		<PackageReference Include="Serilog.Enrichers.AssemblyName" Version="1.0.9" />
+		<PackageReference Include="Serilog.Enrichers.EnrichedProperties" Version="1.0.63" />
+		<PackageReference Include="Serilog.Enrichers.Environment" Version="2.2.0" />
+		<PackageReference Include="Serilog.Enrichers.Process" Version="2.0.2" />
+		<PackageReference Include="Serilog.Enrichers.Thread" Version="3.1.0" />
+		<PackageReference Include="Serilog.Exceptions" Version="8.0.0" />
+		<PackageReference Include="Serilog.Extensions.Logging" Version="3.1.0" />
+		<PackageReference Include="Serilog.Formatting.Elasticsearch" Version="8.4.1" />
+		<PackageReference Include="Serilog.Sinks.Console" Version="4.0.1" />
+		<PackageReference Include="Serilog.Sinks.Elasticsearch" Version="8.4.1" />
+		<PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
+		<PackageReference Include="Serilog.Sinks.MSSqlServer" Version="5.6.1" />
+		<PackageReference Include="ISI.Services.ServiceExample" Version="1.0.8029.35092" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+		<PackageReference Include="Swashbuckle.AspNetCore.Newtonsoft" Version="6.2.3" />
+		<PackageReference Include="ISI.Extensions.AspNetCore" Version="10.0.8028.36523" />
+		<PackageReference Include="ISI.Extensions.Caching.MessageBus" Version="10.0.8028.36523" />
+		<PackageReference Include="ISI.Extensions.JsonSerialization.Newtonsoft" Version="10.0.8028.36523" />
+		<PackageReference Include="ISI.Extensions.MessageBus.MassTransit.RabbitMQ" Version="10.0.8028.36523" />
+		<PackageReference Include="ISI.Extensions.Ngrok" Version="10.0.8028.36523" />
+		<PackageReference Include="ISI.Extensions" Version="10.0.8028.36523" />
+		<PackageReference Update="NETStandard.Library" Version="2.0.3" />
+	</ItemGroup>
+
+</Project>
