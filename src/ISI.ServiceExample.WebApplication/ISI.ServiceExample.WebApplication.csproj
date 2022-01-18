@@ -19,7 +19,7 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="6.0.0" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="5.0.12" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="5.0.13" />
 		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
 		<PackageReference Include="Serilog" Version="2.10.0" />
 		<PackageReference Include="Serilog.AspNetCore" Version="4.1.0" />
@@ -35,15 +35,15 @@
 		<PackageReference Include="Serilog.Sinks.Elasticsearch" Version="8.4.1" />
 		<PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
 		<PackageReference Include="Serilog.Sinks.MSSqlServer" Version="5.6.1" />
-		<PackageReference Include="ISI.Services.ServiceExample" Version="1.0.8029.35092" />
+		<PackageReference Include="ISI.Services.ServiceExample" Version="1.0.8053.40180" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
 		<PackageReference Include="Swashbuckle.AspNetCore.Newtonsoft" Version="6.2.3" />
-		<PackageReference Include="ISI.Extensions.AspNetCore" Version="10.0.8028.36523" />
-		<PackageReference Include="ISI.Extensions.Caching.MessageBus" Version="10.0.8028.36523" />
-		<PackageReference Include="ISI.Extensions.JsonSerialization.Newtonsoft" Version="10.0.8028.36523" />
-		<PackageReference Include="ISI.Extensions.MessageBus.MassTransit.RabbitMQ" Version="10.0.8028.36523" />
-		<PackageReference Include="ISI.Extensions.Ngrok" Version="10.0.8028.36523" />
-		<PackageReference Include="ISI.Extensions" Version="10.0.8028.36523" />
+		<PackageReference Include="ISI.Extensions.AspNetCore" Version="10.0.8053.39137" />
+		<PackageReference Include="ISI.Extensions.Caching.MessageBus" Version="10.0.8053.39137" />
+		<PackageReference Include="ISI.Extensions.JsonSerialization.Newtonsoft" Version="10.0.8053.39137" />
+		<PackageReference Include="ISI.Extensions.MessageBus.MassTransit.RabbitMQ" Version="10.0.8053.39137" />
+		<PackageReference Include="ISI.Extensions.Ngrok" Version="10.0.8053.39137" />
+		<PackageReference Include="ISI.Extensions" Version="10.0.8053.39137" />
 		<PackageReference Update="NETStandard.Library" Version="2.0.3" />
 	</ItemGroup>
 
