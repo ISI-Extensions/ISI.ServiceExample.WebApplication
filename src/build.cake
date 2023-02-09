@@ -9,28 +9,36 @@ var settings = GetSettings(settingsFullName);
 var target = Argument("target", "Default");
 var configuration = Argument("configuration", "Release");
 
-var solutionPath = File("./ISI.ServiceExample.WebApplication.sln");
-var solution = ParseSolution(solutionPath);
-
-var assemblyVersionFile = File("./ISI.ServiceExample.Version.cs");
+var solutionFile = File("./ISI.ServiceExample.WebApplication.sln");
+var solution = ParseSolution(solutionFile);
+var rootProjectFile = File("./ISI.ServiceExample.WebApplication/ISI.ServiceExample.WebApplication.csproj");
+var rootAssemblyVersionKey = "ISI.ServiceExample";
+var artifactName = "ISI.ServiceExample.WindowsService";
 
 var buildDateTime = DateTime.UtcNow;
 var buildDateTimeStamp = GetDateTimeStamp(buildDateTime);
 var buildRevision = GetBuildRevision(buildDateTime);
-var assemblyVersion = GetAssemblyVersion(ParseAssemblyInfo(assemblyVersionFile).AssemblyVersion, buildRevision);
-Information("AssemblyVersion: {0}", assemblyVersion);
+
+var assemblyVersions = GetAssemblyVersionFiles(rootAssemblyVersionKey, buildRevision);
+var assemblyVersion = assemblyVersions[rootAssemblyVersionKey].AssemblyVersion;
+
+var buildDateTimeStampVersion = new ISI.Extensions.Scm.DateTimeStampVersion(buildDateTimeStamp, assemblyVersions[rootAssemblyVersionKey].AssemblyVersion);
+
+Information("BuildDateTimeStampVersion: {0}", buildDateTimeStampVersion);
+
+var nugetPackOutputDirectory = Argument("NugetPackOutputDirectory", "../Nuget");
 
 Task("Clean")
 	.Does(() =>
 	{
-		foreach(var projectPath in solution.Projects.Select(p => p.Path.GetDirectory()))
+		Information("Cleaning Projects ...");
+
+		foreach(var projectPath in new HashSet<string>(solution.Projects.Select(p => p.Path.GetDirectory().ToString())))
 		{
 			Information("Cleaning {0}", projectPath);
 			CleanDirectories(projectPath + "/**/bin/" + configuration);
 			CleanDirectories(projectPath + "/**/obj/" + configuration);
 		}
-
-		Information("Cleaning Projects ...");
 	});
 
 Task("NugetPackageRestore")
@@ -38,31 +46,31 @@ Task("NugetPackageRestore")
 	.Does(() =>
 	{
 		Information("Restoring Nuget Packages ...");
-		NuGetRestore(solutionPath);
+		using(GetNugetLock())
+		{
+			NuGetRestore(solutionFile);
+		}
 	});
 
 Task("Build")
 	.IsDependentOn("NugetPackageRestore")
 	.Does(() => 
 	{
-		CreateAssemblyInfo(assemblyVersionFile, new AssemblyInfoSettings()
-		{
-			Version = assemblyVersion,
-		});
+		SetAssemblyVersionFiles(assemblyVersions);
 
-		MSBuild("ISI.ServiceExample.WebApplication\\ISI.ServiceExample.WebApplication.csproj", configurator => configurator
-			.SetVerbosity(Verbosity.Verbose)
-			.SetConfiguration(configuration)
-			.WithProperty("DeployOnBuild", "true")
-			.WithProperty("PublishProfile", "docker.pubxml")
-			.SetMaxCpuCount(0)
-			.SetNodeReuse(false)
-			.WithTarget("Rebuild"));
-
-		CreateAssemblyInfo(assemblyVersionFile, new AssemblyInfoSettings()
+		try
 		{
-			Version = GetAssemblyVersion(assemblyVersion, "*"),
-		});
+			MSBuild(solutionFile, configurator => configurator
+				.SetConfiguration(configuration)
+				.SetVerbosity(Verbosity.Quiet)
+				.SetMSBuildPlatform(MSBuildPlatform.x64)
+				.SetPlatformTarget(PlatformTarget.MSIL)
+				.WithTarget("Rebuild"));
+		}
+		finally
+		{
+			ResetAssemblyVersionFiles(assemblyVersions);
+		}
 	});
 
 Task("Publish")
