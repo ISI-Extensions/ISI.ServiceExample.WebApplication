@@ -26,8 +26,6 @@ var buildDateTimeStampVersion = new ISI.Extensions.Scm.DateTimeStampVersion(buil
 
 Information("BuildDateTimeStampVersion: {0}", buildDateTimeStampVersion);
 
-var nugetPackOutputDirectory = Argument("NugetPackOutputDirectory", "../Nuget");
-
 Task("Clean")
 	.Does(() =>
 	{
