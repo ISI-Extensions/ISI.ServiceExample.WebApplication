@@ -32,9 +32,9 @@ using ISI.Extensions.AspNetCore.Swashbuckle.Extensions;
 
 namespace ISI.ServiceExample.WebApplication
 {
-	public class Startup
+	public class WebStartup
 	{
-		public Startup(IConfiguration configuration)
+		public WebStartup(IConfiguration configuration)
 		{
 			Configuration = configuration;
 		}
