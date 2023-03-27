@@ -190,7 +190,7 @@ namespace ISI.ServiceExample.WebApplication
 
 					webBuilder.UseContentRoot(System.IO.Directory.GetCurrentDirectory());
 
-					webBuilder.UseStartup<Startup>();
+					webBuilder.UseStartup<WebStartup>();
 
 #if DEBUG
 					webBuilder.UseIISIntegration();

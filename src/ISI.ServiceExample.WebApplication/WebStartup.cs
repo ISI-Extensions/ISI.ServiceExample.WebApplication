@@ -50,8 +50,8 @@ namespace ISI.ServiceExample.WebApplication
 				;
 
 			services
-				.AddAuthentication(BearerAuthenticationHandler.AuthenticationHandlerName)
-				.AddScheme<Microsoft.AspNetCore.Authentication.AuthenticationSchemeOptions, BearerAuthenticationHandler>(BearerAuthenticationHandler.AuthenticationHandlerName, null)
+				.AddAuthentication(AuthenticationHandler.AuthenticationHandlerName)
+				.AddScheme<Microsoft.AspNetCore.Authentication.AuthenticationSchemeOptions, AuthenticationHandler>(AuthenticationHandler.AuthenticationHandlerName, null)
 				;
 
 			services.AddAuthorization(options =>

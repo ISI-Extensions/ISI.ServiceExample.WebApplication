@@ -28,7 +28,7 @@ namespace ISI.ServiceExample.WebApplication
 
 		protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, AuthorizationPolicy requirement)
 		{
-			if (!context.User.HasClaim(claim => string.Equals(claim.Type, BearerAuthenticationHandler.Keys.UserUuid, StringComparison.Ordinal)))
+			if (!context.User.HasClaim(claim => string.Equals(claim.Type, AuthenticationHandler.Keys.UserUuid, StringComparison.Ordinal)))
 			{
 				context.Fail();
 

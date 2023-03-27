@@ -35,7 +35,7 @@ namespace ISI.ServiceExample.WebApplication.Controllers
 
 		protected Guid GetUserUuid()
 		{
-			if(HttpContext.Items.TryGetValue(BearerAuthenticationHandler.Keys.UserUuid, out var value))
+			if(HttpContext.Items.TryGetValue(AuthenticationHandler.Keys.UserUuid, out var value))
 			{
 				return string.Format("{0}", value).ToGuid();
 			}

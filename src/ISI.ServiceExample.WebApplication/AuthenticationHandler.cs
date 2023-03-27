@@ -22,9 +22,9 @@ using ISI.Extensions.Extensions;
 
 namespace ISI.ServiceExample.WebApplication
 {
-	public class BearerAuthenticationHandler : Microsoft.AspNetCore.Authentication.AuthenticationHandler<Microsoft.AspNetCore.Authentication.AuthenticationSchemeOptions>
+	public class AuthenticationHandler : Microsoft.AspNetCore.Authentication.AuthenticationHandler<Microsoft.AspNetCore.Authentication.AuthenticationSchemeOptions>
 	{
-		public const string AuthenticationHandlerName = nameof(BearerAuthenticationHandler);
+		public const string AuthenticationHandlerName = nameof(AuthenticationHandler);
 
 		public class Keys
 		{
@@ -33,7 +33,7 @@ namespace ISI.ServiceExample.WebApplication
 			public const string UserUuid = nameof(UserUuid);
 		}
 
-		public BearerAuthenticationHandler(
+		public AuthenticationHandler(
 			Microsoft.Extensions.Options.IOptionsMonitor<Microsoft.AspNetCore.Authentication.AuthenticationSchemeOptions> options,
 			Microsoft.Extensions.Logging.ILoggerFactory logger,
 			System.Text.Encodings.Web.UrlEncoder encoder,
