@@ -17,6 +17,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ISI.Extensions.AspNetCore.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -46,7 +47,12 @@ namespace ISI.ServiceExample.WebApplication
 		{
 			services
 				.AddControllersWithViews()
-				.AddNewtonsoftJson()
+				.AddISIAspNetCore()
+				.AddNewtonsoftJson(options =>
+				{
+					options.SerializerSettings.Converters = ISI.Extensions.JsonSerialization.Newtonsoft.NewtonsoftJsonSerializer.JsonConverters();
+					options.SerializerSettings.DateParseHandling = global::Newtonsoft.Json.DateParseHandling.None;
+				})
 				;
 
 			services
