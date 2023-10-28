@@ -17,9 +17,9 @@
   <ItemGroup>
     <PackageReference Include="ISI.Services.ServiceExample.MessageBus" Version="1.0.8681.4720" />
     <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="7.0.0" />
-    <PackageReference Include="Microsoft.NET.Build.Containers" Version="7.0.401" />
+    <PackageReference Include="Microsoft.NET.Build.Containers" Version="7.0.403" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="7.0.11" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="7.0.13" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.5" />
     <PackageReference Include="Serilog" Version="3.0.1" />
     <PackageReference Include="Serilog.AspNetCore" Version="7.0.0" />
@@ -37,12 +37,12 @@
     <PackageReference Include="Serilog.Sinks.MSSqlServer" Version="6.3.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.Newtonsoft" Version="6.5.0" />
-    <PackageReference Include="ISI.Extensions.AspNetCore" Version="10.0.8681.2779" />
-    <PackageReference Include="ISI.Extensions.Caching.MessageBus" Version="10.0.8681.2779" />
-    <PackageReference Include="ISI.Extensions.JsonSerialization.Newtonsoft" Version="10.0.8681.2779" />
-    <PackageReference Include="ISI.Extensions.MessageBus.MassTransit.RabbitMQ" Version="10.0.8681.2779" />
-    <PackageReference Include="ISI.Extensions.Ngrok" Version="10.0.8681.2779" />
-    <PackageReference Include="ISI.Extensions" Version="10.0.8681.2779" />
+    <PackageReference Include="ISI.Extensions.AspNetCore" Version="10.0.8700.39170" />
+    <PackageReference Include="ISI.Extensions.Caching.MessageBus" Version="10.0.8700.39170" />
+    <PackageReference Include="ISI.Extensions.JsonSerialization.Newtonsoft" Version="10.0.8700.39170" />
+    <PackageReference Include="ISI.Extensions.MessageBus.MassTransit.RabbitMQ" Version="10.0.8700.39170" />
+    <PackageReference Include="ISI.Extensions.Ngrok" Version="10.0.8700.39170" />
+    <PackageReference Include="ISI.Extensions" Version="10.0.8700.39170" />
     <None Update="T4LocalContent\T4LocalContent.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>T4LocalContent.generatedcode.cs</LastGenOutput>
