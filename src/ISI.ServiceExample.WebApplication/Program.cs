@@ -149,24 +149,24 @@ namespace ISI.ServiceExample.WebApplication
 			return loggerConfiguration;
 		}
 
-		public static IHostBuilder CreateHostBuilder(IConfigurationRoot configuration, string environment, string[] args)
+		public static IHostBuilder CreateHostBuilder(IConfigurationRoot configurationRoot, string environment, string[] args)
 		{
 			return Host
 				.CreateDefaultBuilder(args)
-				.UseSerilog((context, services, loggerConfiguration) => UpdateLoggerConfiguration(loggerConfiguration, services, configuration, environment))
+				.UseSerilog((context, services, loggerConfiguration) => UpdateLoggerConfiguration(loggerConfiguration, services, configurationRoot, environment))
 				.ConfigureWebHostDefaults(webBuilder =>
 				{
 					webBuilder.ConfigureServices(services =>
 						{
 							services
 								.AddOptions()
-								.AddSingleton<Microsoft.Extensions.Configuration.IConfiguration>(configuration)
-								.AddAllConfigurations(configuration)
-								.AddConfiguration<Microsoft.Extensions.Hosting.ConsoleLifetimeOptions>(configuration)
-								.AddConfiguration<Microsoft.Extensions.Hosting.HostOptions>(configuration)
+								.AddSingleton<Microsoft.Extensions.Configuration.IConfiguration>(configurationRoot)
+								.AddAllConfigurations(configurationRoot)
+								.AddConfiguration<Microsoft.Extensions.Hosting.ConsoleLifetimeOptions>(configurationRoot)
+								.AddConfiguration<Microsoft.Extensions.Hosting.HostOptions>(configurationRoot)
 
-								.AddConfigurationRegistrations(configuration)
-								.ProcessServiceRegistrars()
+								.AddConfigurationRegistrations(configurationRoot)
+								.ProcessServiceRegistrars(configurationRoot)
 
 								.AddSingleton<ISI.Extensions.JsonSerialization.Newtonsoft.NewtonsoftJsonSerializer>()
 								;
@@ -184,7 +184,7 @@ namespace ISI.ServiceExample.WebApplication
 								.AddSingleton<Microsoft.Extensions.Caching.Memory.IMemoryCache>(provider => new Microsoft.Extensions.Caching.Memory.MemoryCache(new Microsoft.Extensions.Caching.Memory.MemoryCacheOptions()))
 								.AddSingleton<ISI.Extensions.Caching.ICacheManager, ISI.Extensions.Caching.CacheManager<Microsoft.Extensions.Caching.Memory.IMemoryCache>>()
 
-								.AddMessageBus(configuration);
+								.AddMessageBus(configurationRoot);
 							;
 						});
 
