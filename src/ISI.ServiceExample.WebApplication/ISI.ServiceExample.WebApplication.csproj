@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <Deterministic>false</Deterministic>
     <Platforms>AnyCPU;x64</Platforms>
@@ -15,7 +15,7 @@
     <None Include="..\ISI.ServiceExample.licenseheader" Link="ISI.ServiceExample.licenseheader" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="ISI.Services.ServiceExample" Version="1.0.8717.40081" />
+    <PackageReference Include="ISI.Services.ServiceExample" Version="1.0.8724.3290" />
     <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="8.0.0" />
     <PackageReference Include="Microsoft.NET.Build.Containers" Version="8.0.100" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
@@ -37,12 +37,12 @@
     <PackageReference Include="Serilog.Sinks.MSSqlServer" Version="6.3.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.Newtonsoft" Version="6.5.0" />
-    <PackageReference Include="ISI.Extensions.AspNetCore" Version="10.0.8723.29352" />
+    <PackageReference Include="ISI.Extensions.AspNetCore" Version="10.0.8723.34065" />
     <PackageReference Include="ISI.Extensions.Caching.MessageBus" Version="10.0.8723.34065" />
-    <PackageReference Include="ISI.Extensions.JsonSerialization.Newtonsoft" Version="10.0.8723.29352" />
+    <PackageReference Include="ISI.Extensions.JsonSerialization.Newtonsoft" Version="10.0.8723.34065" />
     <PackageReference Include="ISI.Extensions.MessageBus.MassTransit.RabbitMQ" Version="10.0.8723.34065" />
     <PackageReference Include="ISI.Extensions.Ngrok" Version="10.0.8723.34065" />
-    <PackageReference Include="ISI.Extensions" Version="10.0.8723.29352" />
+    <PackageReference Include="ISI.Extensions" Version="10.0.8723.34065" />
     <None Update="T4LocalContent\T4LocalContent.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>T4LocalContent.generatedcode.cs</LastGenOutput>
