@@ -37,12 +37,12 @@
     <PackageReference Include="Serilog.Sinks.MSSqlServer" Version="6.5.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.Newtonsoft" Version="6.5.0" />
-    <PackageReference Include="ISI.Extensions.AspNetCore" Version="10.0.8739.4648" />
-    <PackageReference Include="ISI.Extensions.Caching.MessageBus" Version="10.0.8739.4648" />
-    <PackageReference Include="ISI.Extensions.JsonSerialization.Newtonsoft" Version="10.0.8739.4648" />
-    <PackageReference Include="ISI.Extensions.MessageBus.MassTransit.RabbitMQ" Version="10.0.8739.4648" />
-    <PackageReference Include="ISI.Extensions.Ngrok" Version="10.0.8739.4648" />
-    <PackageReference Include="ISI.Extensions" Version="10.0.8739.4648" />
+    <PackageReference Include="ISI.Extensions.AspNetCore" Version="10.0.8744.4837" />
+    <PackageReference Include="ISI.Extensions.Caching.MessageBus" Version="10.0.8744.4837" />
+    <PackageReference Include="ISI.Extensions.JsonSerialization.Newtonsoft" Version="10.0.8744.4837" />
+    <PackageReference Include="ISI.Extensions.MessageBus.MassTransit.RabbitMQ" Version="10.0.8744.4837" />
+    <PackageReference Include="ISI.Extensions.Ngrok" Version="10.0.8744.4837" />
+    <PackageReference Include="ISI.Extensions" Version="10.0.8744.4837" />
     <None Update="T4LocalContent\T4LocalContent.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>T4LocalContent.generatedcode.cs</LastGenOutput>
