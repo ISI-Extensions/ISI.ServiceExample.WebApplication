@@ -1,6 +1,6 @@
 #region Copyright & License
 /*
-Copyright (c) 2023, Integrated Solutions, Inc.
+Copyright (c) 2024, Integrated Solutions, Inc.
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
@@ -33,14 +33,6 @@ namespace ISI.ServiceExample.WebApplication.Controllers
 			Logger = logger;
 		}
 
-		protected Guid GetUserUuid()
-		{
-			if(HttpContext.Items.TryGetValue(AuthenticationHandler.Keys.UserUuid, out var value))
-			{
-				return string.Format("{0}", value).ToGuid();
-			}
-
-			return Guid.Empty;
-		}
+		protected Guid? GetUserUuid() => User?.Claims?.NullCheckedFirstOrDefault(claim => string.Equals(claim.Type, System.IdentityModel.Tokens.Jwt.JwtRegisteredClaimNames.Sub, StringComparison.InvariantCultureIgnoreCase))?.Value?.ToGuidNullable();
 	}
 }

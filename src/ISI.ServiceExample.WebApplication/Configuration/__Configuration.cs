@@ -1,6 +1,6 @@
 ﻿#region Copyright & License
 /*
-Copyright (c) 2023, Integrated Solutions, Inc.
+Copyright (c) 2024, Integrated Solutions, Inc.
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
@@ -25,6 +25,6 @@ namespace ISI.ServiceExample.WebApplication
 	{
 		public const string ConfigurationSectionName = "ISI.ServiceExample.WebApplication";
 
-		public ElasticsearchLoggingConfiguration ElasticsearchLogging { get; set; } = new ElasticsearchLoggingConfiguration();
+		public string ApiToken { get; set; }
 	}
 }

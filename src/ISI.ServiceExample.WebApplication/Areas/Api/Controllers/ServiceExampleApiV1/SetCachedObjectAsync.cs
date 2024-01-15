@@ -1,6 +1,6 @@
 #region Copyright & License
 /*
-Copyright (c) 2023, Integrated Solutions, Inc.
+Copyright (c) 2024, Integrated Solutions, Inc.
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
@@ -31,7 +31,7 @@ namespace ISI.ServiceExample.WebApplication.Areas.Api.Controllers
 	public partial class ServiceExampleApiV1Controller
 	{
 		[Microsoft.AspNetCore.Mvc.AcceptVerbs(nameof(Microsoft.AspNetCore.Http.HttpMethods.Post))]
-		[Microsoft.AspNetCore.Authorization.Authorize(Policy = AuthorizationPolicy.PolicyName)]
+		[Microsoft.AspNetCore.Authorization.Authorize(Policy = Program.AuthorizationPolicyName)]
 		[ISI.Extensions.AspNetCore.NamedRoute(Routes.ServiceExampleApiV1.RouteNames.SetCachedObject, typeof(Routes.ServiceExampleApiV1), "set-cached-object")]
 		public async Task<Microsoft.AspNetCore.Mvc.ActionResult<SERIALIZABLEMODELS.SetCachedObjectResponse>> SetCachedObjectAsync([Microsoft.AspNetCore.Mvc.FromBody] SERIALIZABLEMODELS.SetCachedObjectRequest request)
 		{
