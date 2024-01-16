@@ -16,17 +16,17 @@
   </ItemGroup>
   <ItemGroup>
 	  <PackageReference Include="ISI.Services.ServiceExample" Version="1.0.8779.27418" />
-    <PackageReference Include="ISI.Extensions.AspNetCore" Version="10.0.8780.40411" />
-    <PackageReference Include="ISI.Extensions.Caching.MessageBus" Version="10.0.8780.40411" />
-    <PackageReference Include="ISI.Extensions.JsonSerialization.Newtonsoft" Version="10.0.8780.40411" />
-    <PackageReference Include="ISI.Extensions.MessageBus.MassTransit.RabbitMQ" Version="10.0.8780.40411" />
-    <PackageReference Include="ISI.Extensions.Ngrok" Version="10.0.8780.40411" />
-    <PackageReference Include="ISI.Extensions" Version="10.0.8780.40411" />
-	  <PackageReference Include="ISI.Platforms" Version="10.0.8780.40411" />
-	  <PackageReference Include="ISI.Platforms.AspNetCore" Version="10.0.8780.40411" />
-	  <PackageReference Include="ISI.Platforms.Elk" Version="10.0.8780.40411" />
-	  <PackageReference Include="ISI.Platforms.Serilog" Version="10.0.8780.40411" />
-	  <PackageReference Include="ISI.Platforms.ServiceApplication" Version="10.0.8780.40411" />
+    <PackageReference Include="ISI.Extensions.AspNetCore" Version="10.0.8781.1041" />
+    <PackageReference Include="ISI.Extensions.Caching.MessageBus" Version="10.0.8781.1041" />
+    <PackageReference Include="ISI.Extensions.JsonSerialization.Newtonsoft" Version="10.0.8781.1041" />
+    <PackageReference Include="ISI.Extensions.MessageBus.MassTransit.RabbitMQ" Version="10.0.8781.1041" />
+    <PackageReference Include="ISI.Extensions.Ngrok" Version="10.0.8781.1041" />
+    <PackageReference Include="ISI.Extensions" Version="10.0.8781.1041" />
+	  <PackageReference Include="ISI.Platforms" Version="10.0.8781.1041" />
+	  <PackageReference Include="ISI.Platforms.AspNetCore" Version="10.0.8781.1041" />
+	  <PackageReference Include="ISI.Platforms.Elk" Version="10.0.8781.1041" />
+	  <PackageReference Include="ISI.Platforms.Serilog" Version="10.0.8781.1041" />
+	  <PackageReference Include="ISI.Platforms.ServiceApplication" Version="10.0.8781.1041" />
     <PackageReference Include="Microsoft.NET.Build.Containers" Version="8.0.101" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.6" />
   </ItemGroup>
