@@ -15,7 +15,7 @@
     <None Include="..\ISI.ServiceExample.licenseheader" Link="ISI.ServiceExample.licenseheader" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="ISI.Services.ServiceExample" Version="1.0.8783.840" />
+    <PackageReference Include="ISI.Services.ServiceExample" Version="1.0.8783.40073" />
     <PackageReference Include="ISI.Extensions.AspNetCore" Version="10.0.8782.42175" />
     <PackageReference Include="ISI.Extensions.Caching.MessageBus" Version="10.0.8782.42175" />
     <PackageReference Include="ISI.Extensions.JsonSerialization.Newtonsoft" Version="10.0.8782.42175" />
