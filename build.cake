@@ -9,9 +9,9 @@ var settings = GetSettings(settingsFullName);
 var target = Argument("target", "Default");
 var configuration = Argument("configuration", "Release");
 
-var solutionFile = File("./ISI.ServiceExample.WebApplication.sln");
+var solutionFile = File("./src/ISI.ServiceExample.WebApplication.slnx");
 var solution = ParseSolution(solutionFile);
-var rootProjectFile = File("./ISI.ServiceExample.WebApplication/ISI.ServiceExample.WebApplication.csproj");
+var rootProjectFile = File("./src/ISI.ServiceExample.WebApplication/ISI.ServiceExample.WebApplication.csproj");
 var rootAssemblyVersionKey = "ISI.ServiceExample";
 var artifactName = "ISI.ServiceExample.WindowsService";
 
@@ -46,7 +46,7 @@ Task("NugetPackageRestore")
 		Information("Restoring Nuget Packages ...");
 		using(GetNugetLock())
 		{
-			NuGetRestore(solutionFile);
+			RestoreNugetPackages(solutionFile);
 		}
 	});
 
@@ -54,20 +54,12 @@ Task("Build")
 	.IsDependentOn("NugetPackageRestore")
 	.Does(() => 
 	{
-		SetAssemblyVersionFiles(assemblyVersions);
-
-		try
+		using(SetAssemblyVersionFiles(assemblyVersions))
 		{
-			MSBuild(solutionFile, configurator => configurator
-				.SetConfiguration(configuration)
-				.SetVerbosity(Verbosity.Quiet)
-				.SetMSBuildPlatform(MSBuildPlatform.x64)
-				.SetPlatformTarget(PlatformTarget.MSIL)
-				.WithTarget("Rebuild"));
-		}
-		finally
-		{
-			ResetAssemblyVersionFiles(assemblyVersions);
+			DotNetBuild(solutionFile, new DotNetBuildSettings()
+			{
+				Configuration = configuration,
+			});
 		}
 	});
 
