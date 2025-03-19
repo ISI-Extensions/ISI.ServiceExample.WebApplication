@@ -10,7 +10,7 @@ var target = Argument("target", "Default");
 var configuration = Argument("configuration", "Release");
 
 var solutionFile = File("./src/ISI.ServiceExample.WebApplication.slnx");
-var solution = ParseSolution(solutionFile);
+var solutionDetails = GetSolutionDetails(solutionFile);
 var rootProjectFile = File("./src/ISI.ServiceExample.WebApplication/ISI.ServiceExample.WebApplication.csproj");
 var rootAssemblyVersionKey = "ISI.ServiceExample";
 var artifactName = "ISI.ServiceExample.WindowsService";
@@ -31,7 +31,7 @@ Task("Clean")
 	{
 		Information("Cleaning Projects ...");
 
-		foreach(var projectPath in new HashSet<string>(solution.Projects.Select(p => p.Path.GetDirectory().ToString())))
+		foreach(var projectPath in new HashSet<string>(solutionDetails.ProjectDetailsSet.Select(project => project.ProjectDirectory)))
 		{
 			Information("Cleaning {0}", projectPath);
 			CleanDirectories(projectPath + "/**/bin/" + configuration);
