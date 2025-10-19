@@ -15,19 +15,19 @@
     <None Include="..\ISI.ServiceExample.licenseheader" Link="ISI.ServiceExample.licenseheader" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="ISI.Services.ServiceExample" Version="1.0.9409.33096" />
-    <PackageReference Include="ISI.Extensions.AspNetCore" Version="10.0.9409.31621" />
-    <PackageReference Include="ISI.Extensions.Caching.MessageBus" Version="10.0.9409.31621" />
-    <PackageReference Include="ISI.Extensions.JsonSerialization.Newtonsoft" Version="10.0.9409.31621" />
-    <PackageReference Include="ISI.Extensions.MessageBus.MassTransit.RabbitMQ" Version="10.0.9409.31621" />
-    <PackageReference Include="ISI.Extensions.Ngrok" Version="10.0.9409.31621" />
-    <PackageReference Include="ISI.Extensions" Version="10.0.9409.31621" />
-    <PackageReference Include="ISI.Platforms" Version="10.0.9409.31621" />
-    <PackageReference Include="ISI.Platforms.AspNetCore" Version="10.0.9409.31621" />
-    <PackageReference Include="ISI.Platforms.Elk" Version="10.0.9409.31621" />
-    <PackageReference Include="ISI.Platforms.Serilog" Version="10.0.9409.31621" />
-    <PackageReference Include="ISI.Platforms.ServiceApplication" Version="10.0.9409.31621" />
-    <PackageReference Include="Microsoft.NET.Build.Containers" Version="9.0.305" />
+    <PackageReference Include="ISI.Services.ServiceExample" Version="1.0.9423.38192" />
+    <PackageReference Include="ISI.Extensions.AspNetCore" Version="10.0.9422.30120" />
+    <PackageReference Include="ISI.Extensions.Caching.MessageBus" Version="10.0.9422.30120" />
+    <PackageReference Include="ISI.Extensions.JsonSerialization.Newtonsoft" Version="10.0.9422.30120" />
+    <PackageReference Include="ISI.Extensions.MessageBus.MassTransit.RabbitMQ" Version="10.0.9422.30120" />
+    <PackageReference Include="ISI.Extensions.Ngrok" Version="10.0.9422.30120" />
+    <PackageReference Include="ISI.Extensions" Version="10.0.9422.30120" />
+    <PackageReference Include="ISI.Platforms" Version="10.0.9422.30120" />
+    <PackageReference Include="ISI.Platforms.AspNetCore" Version="10.0.9422.30120" />
+    <PackageReference Include="ISI.Platforms.Elk" Version="10.0.9422.30120" />
+    <PackageReference Include="ISI.Platforms.Serilog" Version="10.0.9422.30120" />
+    <PackageReference Include="ISI.Platforms.ServiceApplication" Version="10.0.9422.30120" />
+    <PackageReference Include="Microsoft.NET.Build.Containers" Version="9.0.306" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.22.1" />
   </ItemGroup>
   <ItemGroup>
