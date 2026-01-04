@@ -19,5 +19,5 @@ using System.Reflection;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyCompany("Integrated Solutions, Inc.")]
-[assembly: AssemblyCopyright("Copyright (c) 2024, Integrated Solutions, Inc.")]
+[assembly: AssemblyCopyright("Copyright (c) 2026, Integrated Solutions, Inc.")]
 [assembly: AssemblyTrademark("Integrated Solutions, Inc.")]
